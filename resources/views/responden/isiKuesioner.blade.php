@@ -8,7 +8,7 @@
         <div class="progress" style="height: 20px;">
         <div class="progress-bar" role="progressbar" style="width: 15%;" aria-valuenow="15" aria-valuemin="0" aria-valuemax="100"></div>
     </div>
-<h4><strong>Bagian I : Kategori Sistem Elektronik</strong></h4>
+<h4 class="mt-3"><strong>Bagian I : Kategori Sistem Elektronik</strong></h4>
 
 <p>Bagian ini mengevaluasi tingkat atau kategori sistem elektronik yang digunakan</p>
     <table class="table table-bordered">
@@ -22,25 +22,9 @@
         <tr>
         <th scope="row">1.1</th>
         <td colspan="3">Nilai investasi sistem elektronik yang terpasang
-            <div class="form-check">
-                <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option1">
-                <label class="form-check-label" for="exampleRadios1">
-                Lebih dari Rp.30 Miliar 
-                </label>
-            </div>
-            <div class="form-check">
-                <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios2" value="option2">
-                <label class="form-check-label" for="exampleRadios2">
-                Lebih dari Rp.3 Miliar s/d Rp.30 Miliar 
-                </label>
-            </div>
-            <div class="form-check">
-                <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios3" value="option3">
-                <label class="form-check-label" for="exampleRadios2">
-                Kurang dari Rp.3 Miliar
-                </label>
-            </div>
-
+           <div> <input type='radio' name='asfa$i$data[groupId]' value='A'> Lebih dari Rp.30 Miliar  </div>
+           <div> <input type='radio' name='asfa$i$data[groupId]' value='B'> Lebih dari Rp.3 Miliar s/d Rp.30 Miliar </div>
+           <div> <input type='radio' name='asfa$i$data[groupId]' value='C'> Kurang dari Rp.3 Miliar </div>
         </td>
         </tr>
         <tr>
