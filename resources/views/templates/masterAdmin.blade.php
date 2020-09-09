@@ -42,11 +42,11 @@
       <!-- Nav Item - Charts -->
       <li class="nav-item ">
         <a class="nav-link" href="{{ url('/dataResponden') }}">
-        <i class="fas fa-user"></i>
+        <i class="fa fa-info-circle"></i>
           <span>Lihat data responden</span>
           </a>
-          <a class="nav-link" href="">
-        <i class="fas fa-user"></i>
+          <a class="nav-link" href="{{ url('/kelolaPertanyaan' )}}">
+        <i class="fa fa-question"></i>
           <span>Kelola pertanyaan</span>
           </a>
       </li> 
@@ -72,7 +72,7 @@
       
       <li class="nav-item">
         <a class="nav-link" href="">
-          <i class="fas fa-fw fa-table"></i>
+          <i class="fa fa-file"></i>
           <span>Cetak Laporan</span></a>
       </li>
 

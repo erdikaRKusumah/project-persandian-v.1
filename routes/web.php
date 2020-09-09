@@ -44,3 +44,7 @@ Route::group(['middleware' => 'auth'], function(){
 
 Route::get('/halamanAdmin', 'AdminController@index');
 Route::get('/dataResponden', 'AdminController@show');
+
+
+
+Route::get('/kelolaPertanyaan', 'KelolaController@index');
