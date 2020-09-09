@@ -30,7 +30,7 @@
 
       <!-- Sidebar - Brand -->
       <li class="nav-item ">
-        <a class="nav-link" href="/isiData">
+        <a class="nav-link" href="">
         <i class="fas fa-user"></i>
           <span>Isi data responden</span>
           </a>
@@ -41,7 +41,7 @@
 
       <!-- Nav Item - Dashboard -->
       <li class="nav-item">
-        <a class="nav-link" href="/isiKuesioner">
+        <a class="nav-link" href="">
         <i class="fas fa-question"></i>
           <span>Isi Kuesioner</span></a>
       </li>
@@ -50,7 +50,7 @@
 
       <!-- Heading -->
       <div class="sidebar-heading">
-        User
+        Admin
       </div>
 
 

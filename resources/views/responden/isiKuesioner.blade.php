@@ -115,31 +115,162 @@
         </tr>
         <tr>
         <th scope="row">1.5</th>
-        <td colspan="3">Larry the Bird</td>
+        <td colspan="3">Jumlah pengguna Sistem Elektronik
+        <div class="form-check">
+                <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option1">
+                <label class="form-check-label" for="exampleRadios1">
+                Lebih dari 5.000 pengguna    
+                </label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios2" value="option2">
+                <label class="form-check-label" for="exampleRadios2">
+                1.000 sampai dengan 5.000 pengguna 
+                </label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios3" value="option3">
+                <label class="form-check-label" for="exampleRadios2">
+                Kurang dari 1.000 pengguna
+                </label>
+            </div>
+        </td>
         </tr>
         <tr>
         <th scope="row">1.6</th>
-        <td colspan="3">Mark</td>
+        <td colspan="3">Data pribadi yang dikelola Sistem Elektronik
+        <div class="form-check">
+                <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option1">
+                <label class="form-check-label" for="exampleRadios1">
+                Data pribadi yang memiliki hubungan dengan Data Pribadi lainnya   
+                </label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios2" value="option2">
+                <label class="form-check-label" for="exampleRadios2">
+                Data pribadi yang bersifat individu dan/atau data pribadi yang terkait dengan kepemilikan badan usaha
+                </label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios3" value="option3">
+                <label class="form-check-label" for="exampleRadios2">
+                Tidak ada data pribadi
+                </label>
+            </div>
+        </td>
         </tr>
         <tr>
         <th scope="row">1.7</th>
-        <td colspan="3">Jacob</td>
+        <td colspan="3">Tingkat klasifikasi/kekritisan Data yang ada dalam Sistem Elektronik, relatif terhadap ancaman upaya penyerangan atau penerobosan keamanan informasi
+        <div class="form-check">
+                <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option1">
+                <label class="form-check-label" for="exampleRadios1">
+                Sangat Rahasia
+ 
+                </label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios2" value="option2">
+                <label class="form-check-label" for="exampleRadios2">
+                Rahasia dan/ atau Terbatas 
+                </label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios3" value="option3">
+                <label class="form-check-label" for="exampleRadios2">
+                Biasa
+                </label>
+            </div>
+        </td>
         </tr>
         <tr>
         <th scope="row">1.8</th>
-        <td colspan="3">Larry the Bird</td>
+        <td colspan="3">Tingkat kekritisan proses yang ada dalam Sistem Elektronik, relatif terhadap ancaman upaya penyerangan atau penerobosan keamanan informasi
+        <div class="form-check">
+                <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option1">
+                <label class="form-check-label" for="exampleRadios1">
+                Proses yang berisiko mengganggu hajat hidup orang  banyak dan memberi dampak langsung pada layanan publik  
+                </label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios2" value="option2">
+                <label class="form-check-label" for="exampleRadios2">
+                Proses yang berisiko mengganggu hajat hidup orang banyak dan memberi dampak tidak langsung
+                </label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios3" value="option3">
+                <label class="form-check-label" for="exampleRadios2">
+                Proses yang hanya berdampak pada bisnis perusahaan
+                </label>
+            </div>
+        </td>
         </tr>
         <tr>
         <th scope="row">1.9</th>
-        <td colspan="3">Larry the Bird</td>
+        <td colspan="3">Dampak dari kegagalan Sistem Elektronik
+        <div class="form-check">
+                <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option1">
+                <label class="form-check-label" for="exampleRadios1">
+                Tidak tersedianya layanan publik berskala nasional atau membahayakan pertahanan keamanan negara 
+                </label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios2" value="option2">
+                <label class="form-check-label" for="exampleRadios2">
+                Tidak tersedianya layanan publik dalam 1 propinsi atau lebih 
+                </label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios3" value="option3">
+                <label class="form-check-label" for="exampleRadios2">
+                Tidak tersedianya layanan publik dalam 1 kabupaten/kota atau lebih 
+                </label>
+            </div>
+        </td>
         </tr>
         <tr>
         <th scope="row">1.10</th>
-        <td colspan="3">Larry the Bird</td>
+        <td colspan="3">Potensi kerugian atau dampak negatif dari insiden ditembusnya keamanan informasi Sistem Elektronik (sabotase, terorisme)
+        <div class="form-check">
+                <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option1">
+                <label class="form-check-label" for="exampleRadios1">
+                Menimbulkan korban jiwa
+                </label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios2" value="option2">
+                <label class="form-check-label" for="exampleRadios2">
+                Terbatas pada kerugian finansial
+                </label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios3" value="option3">
+                <label class="form-check-label" for="exampleRadios2">
+                Mengakibatkan gangguan operasional sementara ( tidak membahayakan dan mengakibatkan kerugian finansial )
+                </label>
+            </div>
+        </td>
         </tr>
 
     </tbody>
     </table>
+
+    <nav aria-label="...">
+    <ul class="pagination">
+        <li class="page-item disabled">
+        <a class="page-link" href="#" tabindex="-1" aria-disabled="true">Previous</a>
+        </li>
+        <li class="page-item"><a class="page-link" href="#">1</a></li>
+        <li class="page-item active" aria-current="page">
+        <a class="page-link" href="#">2 <span class="sr-only">(current)</span></a>
+        </li>
+        <li class="page-item"><a class="page-link" href="#">3</a></li>
+        <li class="page-item">
+        <a class="page-link" href="#">Next</a>
+        </li>
+    </ul>
+    </nav>
 
 
 @endsection

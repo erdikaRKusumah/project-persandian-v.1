@@ -31,13 +31,12 @@ Route::group(['middleware' => 'auth'], function(){
     
         return view('/admin/halamanAdmin');
     });
-    Route::get('/isiData', function () {
+    Route::get('/halamanUser', function () {
     
         return view('/responden/isiData');
     });
-    Route::get('/isiKuesioner', function () {
-    
-        return view('/responden/isiKuesioner');
-    });
     Route::get('logout','otentikasi\OtentikasiController@logout')->name('logout');
 }); 
+
+Route::get('/halamanAdmin', 'AdminController@index');
+Route::get('/dataResponden', 'AdminController@show');

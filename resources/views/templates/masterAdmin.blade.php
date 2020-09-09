@@ -41,13 +41,20 @@
 
       <!-- Nav Item - Charts -->
       <li class="nav-item ">
-        <a class="nav-link" href="">
+        <a class="nav-link" href="{{ url('/dataResponden') }}">
         <i class="fas fa-user"></i>
           <span>Lihat data responden</span>
+          </a>
+          <a class="nav-link" href="">
+        <i class="fas fa-user"></i>
+          <span>Kelola pertanyaan</span>
           </a>
       </li> 
 
       <hr class="sidebar-divider">
+      <div class="sidebar-heading">
+        Pelaporan
+      </div>
 
       <li class="nav-item">
         <a class="nav-link" href="">
@@ -60,6 +67,13 @@
         <a class="nav-link" href="">
           <i class="fas fa-fw fa-table"></i>
           <span>Tables</span></a>
+      </li>
+
+      
+      <li class="nav-item">
+        <a class="nav-link" href="">
+          <i class="fas fa-fw fa-table"></i>
+          <span>Cetak Laporan</span></a>
       </li>
 
       <!-- Divider -->

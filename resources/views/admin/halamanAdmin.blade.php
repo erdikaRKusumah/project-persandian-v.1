@@ -1,3 +1,4 @@
+
 @extends ('templates/masterAdmin')
 
 
@@ -7,36 +8,23 @@
 <h1 class="h3 mb-4 text-gray-800">Halaman Admin</h1>
 <div class="container">
 
-  <hr class="divider">
-  <!-- yeild 'title table' -->
+
 <table class="table table-striped">
   <thead>
     <tr>
       <th scope="col">#</th>
-      <th scope="col">First</th>
-      <th scope="col">Last</th>
-      <th scope="col">Handle</th>
+      <th scope="col">Kategori</th>
+      <th scope="col">Sub-Kategori</th>
     </tr>
   </thead>
   <tbody>
+    @foreach($kategori as $kat)
     <tr>
-      <th scope="row">1</th>
-      <td>Mark</td>
-      <td>Otto</td>
-      <td>@mdo</td>
+      <th scope="row"> {{ $loop->iteration}} </th>
+      <td> {{ $kat->kategori }} </td>
+      <td> {{ $kat->sub_kategori }} </td>
     </tr>
-    <tr>
-      <th scope="row">2</th>
-      <td>Jacob</td>
-      <td>Thornton</td>
-      <td>@fat</td>
-    </tr>
-    <tr>
-      <th scope="row">3</th>
-      <td>Larry</td>
-      <td>the Bird</td>
-      <td>@twitter</td>
-    </tr>
+    @endforeach
   </tbody>
 </table>
 </div>
