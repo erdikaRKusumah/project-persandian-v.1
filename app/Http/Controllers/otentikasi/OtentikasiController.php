@@ -26,7 +26,7 @@ class OtentikasiController extends Controller
             if ($request->email == 'admin1@gmail.com') {
                 return redirect ('/halamanAdmin');
             }
-            return redirect('/halamanUser');
+            return redirect('/isiData');
         }
         return redirect('/')->with('message','Email atau password salah');
     }
