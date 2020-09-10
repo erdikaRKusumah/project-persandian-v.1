@@ -30,7 +30,7 @@
 
       <!-- Sidebar - Brand -->
       <li class="nav-item ">
-        <a class="nav-link" href="">
+        <a class="nav-link" href="{{ url('/isiData') }}">
         <i class="fas fa-user"></i>
           <span>Isi data responden</span>
           </a>
@@ -41,7 +41,7 @@
 
       <!-- Nav Item - Dashboard -->
       <li class="nav-item">
-        <a class="nav-link" href="">
+        <a class="nav-link" href="{{ url('/isiKuesioner') }}">
         <i class="fas fa-question"></i>
           <span>Isi Kuesioner</span></a>
       </li>

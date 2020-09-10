@@ -41,7 +41,7 @@ Route::group(['middleware' => 'auth'], function(){
     });
     Route::get('logout','otentikasi\OtentikasiController@logout')->name('logout');
 }); 
-
+Route::get('crud/simpanData', 'SimpanDataController@simpan')->name('crud.simpan');
 Route::get('/halamanAdmin', 'AdminController@index');
 Route::get('/dataResponden', 'AdminController@show');
 
