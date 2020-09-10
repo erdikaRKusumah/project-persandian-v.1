@@ -15,7 +15,7 @@ class KelolaController extends Controller
     public function index()
     {
         $pertanyaan = DB::table('pertanyaan')->get();
-        return view('admin.halamanAdmin', ['pertanyaan'=> $pertanyaan]);
+        return view('admin.kelolaPertanyaan', ['pertanyaan'=> $pertanyaan]);
     }
 
     /**

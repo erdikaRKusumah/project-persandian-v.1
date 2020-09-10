@@ -28,7 +28,8 @@
       <td> {{ $per->pertanyaan}} </td>
       <td> {{ $per->pilihan}} </td>
       <td>
-        
+        <a href="" class="badge badge-success">Ubah</a>
+        <a href="" class="badge badge-danger">Hapus</a>
       </td>
     </tr>
     @endforeach
