@@ -8,33 +8,43 @@
 <div class="container">
  <div class="row">
   <div class="col-6">
-  <form action="{{ route('crud.simpan') }}" method="POST">
+  <form action="/responden" method="POST">
   @csrf  
 
   
     <div class="form-group">
-    <label for="inputState">Identitas Instansi atau Perusahaan :</label>
-      <select id="inputState" class="form-control" name="identitas_instansi_perusahaan">
+    <label for="identitas_instansi_perusahaan">Identitas Instansi atau Perusahaan :</label>
+      <select id="inputState" class="form-control @error('identitas_instansi_perusahaan') is-invalid @enderror" name="identitas_instansi_perusahaan" name="identitas_instansi_perusahaan">
         <option selected>Satuan Kerja</option>
         <option>Direktorat</option>
         <option>Departemen</option>
       </select>
+      @error('identitas_instansi_perusahaan')
+    <div class="invalid-feedback">
+        {{$message}}
+      </div>
+      @enderror
     </div>
     
   
     <div class="form-row">
     <div class="form-group col-md-5">
       <label for="alamat">Alamat 1</label>
-      <input type="text" class="form-control" id="alamat">
+      <input type="text" class="form-control @error('alamat') is-invalid @enderror" id="alamat" name="alamat">
+      @error('alamat')
+    <div class="invalid-feedback">
+        {{$message}}
+      </div>
+      @enderror
     </div>
-    <div class="form-group col-md-5">
+    <!-- <div class="form-group col-md-5">
       <label for="alamat 2">Alamat 2</label>
       <input type="text" class="form-control" id="alamat2">
     </div>
     <div class="form-group col-md-2">
       <label for="inputZip">Kode Pos</label>
       <input type="text" class="form-control" id="inputZip">
-    </div>
+    </div> -->
   </div>
 
   <div class="form-group">
