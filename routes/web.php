@@ -45,7 +45,4 @@ Route::group(['middleware' => 'auth'], function(){
 Route::resource('responden', 'RespondenController');
 Route::get('/halamanAdmin', 'AdminController@index');
 Route::get('/dataResponden', 'AdminController@show');
-
-
-
 Route::get('/kelolaPertanyaan', 'KelolaController@index');

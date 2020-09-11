@@ -24,7 +24,7 @@
     </tr>
   </thead>
   <tbody>
-    @foreach($responden as $res)
+    @foreach($respondens as $res)
     <tr>
       <th scope="row"> {{ $loop->iteration}} </th>
       <td> {{ $res->id_responden }} </td>

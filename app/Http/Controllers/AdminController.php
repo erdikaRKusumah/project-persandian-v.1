@@ -22,8 +22,8 @@ class AdminController extends Controller
 
     public function show()
     {
-        $responden = DB::table('responden')->get();
-        return view('admin.dataResponden', ['responden'=> $responden]);
+        $respondens = DB::table('respondens')->get();
+        return view('admin.dataResponden', ['respondens'=> $respondens]);
     }
 
 }
