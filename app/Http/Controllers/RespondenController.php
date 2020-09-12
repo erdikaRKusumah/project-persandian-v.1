@@ -48,6 +48,11 @@ class RespondenController extends Controller
         return redirect('/isiKuesioner');
     }
 
+    public function show(respondens $responden)
+    {
+        return $responden;
+    }
+
    
 
 }

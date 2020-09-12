@@ -28,6 +28,7 @@
       <th scope="col">Jabatan</th>
       <th scope="col">Tanggal Pengisian</th>
       <th scope="col">Deskripsi</th>
+      <th scope="col">Opsi</th>
     </tr>
   </thead>
   <tbody>
@@ -43,6 +44,9 @@
       <td> {{ $res->jabatan }} </td>
       <td> {{ $res->tgl_pengisian }} </td>
       <td> {{ $res->deskripsi }} </td>
+      <td>
+        <a href="/responden/4" class="badge badge-info">Detail</a>
+      </td>
     </tr>
     @endforeach
   </tbody>

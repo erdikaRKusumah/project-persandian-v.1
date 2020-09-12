@@ -108,6 +108,11 @@
           <ul class="navbar-nav ml-auto">
             <div class="topbar-divider d-none d-sm-block"></div>
 
+            <a href="{{url('/halamanAdmin')}}">
+              <i class="fas fa-tachometer-alt" style="font-size:30px"></i>
+              <span class="ml-3"></span>
+            </a>
+
             <!-- Nav Item - User Information -->
             <a class="btn btn-primary" href="{{ route('logout') }}">Logout</a>
 
