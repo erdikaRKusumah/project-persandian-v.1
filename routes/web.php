@@ -49,3 +49,4 @@ Route::get('/dataResponden', 'AdminController@show');
 Route::get('/dataResponden/{responden}', 'RespondenController@show');
 
 Route::get('/kelolaPertanyaan', 'KelolaController@index');
+Route::get('/pertanyaan/{id_pertanyaan}/edit', 'KelolaController@edit');
