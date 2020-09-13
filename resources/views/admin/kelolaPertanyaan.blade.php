@@ -39,7 +39,11 @@
         <button type="button" class="badge badge-success" data-toggle="modal" data-target="#exampleModal">
           Ubah
         </button>
-        <a href="" class="badge badge-danger">Hapus</a>
+        <form action="{{$per->id_pertanyaan}}" method="post" class="d-inline">
+        @method('delete')
+        @csrf 
+        <button type="button" class="badge badge-danger">Hapus</button>
+        </form>
       </td>
     </tr>
     @endforeach
