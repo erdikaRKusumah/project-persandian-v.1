@@ -81,6 +81,6 @@ class KelolaController extends Controller
      */
     public function destroy($id)
     {
-        //
+        return $id_pertanyaan;
     }
 }

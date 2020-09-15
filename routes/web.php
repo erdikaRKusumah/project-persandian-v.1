@@ -44,8 +44,9 @@ Route::group(['middleware' => 'auth'], function(){
 // Route::get('crud/simpanData', 'SimpanDataController@simpan')->name('crud.simpan');
 Route::resource('responden', 'RespondenController');
 Route::get('/halamanAdmin', 'AdminController@index');
+
 Route::get('/dataResponden', 'AdminController@show');
-
-
+Route::get('/dataRespondenDetail}', 'RespondenController@show');
 
 Route::get('/kelolaPertanyaan', 'KelolaController@index');
+Route::delete('/kelolaPertanyaan/{id_pertanyaan}', 'KelolaController@destroy');
