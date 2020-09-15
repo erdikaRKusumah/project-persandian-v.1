@@ -20,10 +20,15 @@ class AdminController extends Controller
         return view('admin.halamanAdmin', ['kategori'=> $kategori]);
     }
 
-    public function show()
+    public function show(Request $request)
     {
-        $responden = DB::table('responden')->get();
-        return view('admin.dataResponden', ['responden'=> $responden]);
+        if($request->has('cari')){
+            $respondens = \App\Responden::where('identitas_instansi_perusahaan','LIKE','%'.$request->cari.'%')->get();
+        } else {
+            $respondens = \App\Responden::all();
+        }
+        return view('admin.dataResponden', ['respondens'=> $respondens]);
     }
+    //aaaa
 
 }
