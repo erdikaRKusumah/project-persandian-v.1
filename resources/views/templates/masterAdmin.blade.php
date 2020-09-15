@@ -163,7 +163,8 @@
 
   <!-- Custom scripts for all pages-->
   <script src="js/sb-admin-2.min.js"></script>
-
+  <script src="{{ ('jquery.min.js')}}"></script>
+    <script src="{{('init.js') }}"></script>
 </body>
 
 </html>

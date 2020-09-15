@@ -14,7 +14,7 @@
   
     <div class="form-group">
     <label for="identitas_instansi_perusahaan">Identitas Instansi atau Perusahaan :</label>
-      <select id="inputState" class="form-control @error('identitas_instansi_perusahaan') is-invalid @enderror" name="identitas_instansi_perusahaan" name="identitas_instansi_perusahaan">
+      <select id="inputState" class="form-control @error('identitas_instansi_perusahaan') is-invalid @enderror" name="identitas_instansi_perusahaan">
         <option selected>Satuan Kerja</option>
         <option>Direktorat</option>
         <option>Departemen</option>

@@ -2,6 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Pertanyaan;
+use App\Kategori;
+use App\Jawaban;
+use App\Responden;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
 
@@ -29,6 +33,7 @@ class AdminController extends Controller
         }
         return view('admin.dataResponden', ['respondens'=> $respondens]);
     }
-    //aaaa
+    
+    
 
 }

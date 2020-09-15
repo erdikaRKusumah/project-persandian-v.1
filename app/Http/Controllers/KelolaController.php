@@ -1,7 +1,10 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use App\Pertanyaan;
+use App\Kategori;
+use App\Jawaban;
+use App\Responden;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
 
@@ -25,7 +28,8 @@ class KelolaController extends Controller
      */
     public function create()
     {
-        //
+        $kategori = DB::table('kategori')->get();
+        return view('admin.create', ['kategori'=> $kategori]);
     }
 
     /**
@@ -36,7 +40,16 @@ class KelolaController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $pilihan = implode(",", $request->pilihan);
+        
+        DB::table('pertanyaan')->insert(
+            ['id_kategori' => $request->id_kategori,
+            'pertanyaan'=> $request->pertanyaan,
+            'pilihan'=>$pilihan]
+        );
+        
+
+        return redirect('/halamanAdmin');
     }
 
     /**
