@@ -46,21 +46,20 @@ class RespondenController extends Controller
         // Responden::create($request->all());
         // return redirect('/isiKuesioner');
 
-        $responden = new Responden;
+        $responden = implode(",", $request->pilihan);
 
-        $responden->id_responden = $request->input('id_responden');
-        $responden->identitas_instansi_perusahaan = $request->input('identitas_instansi_perusahaan');
-        $responden->alamat = $request->input('alamat');
-        $responden->no_telpon = $request->input('no_telpon');
-        $responden->email = $request->input('email');
-        $responden->pengisi_lembar_evaluasi = $request->input('pengisi_lembar_evaluasi');
-        $responden->jabatan = $request->input('jabatan');
-        // $responden->tgl_pengisian = $request->input('tgl_pengisian');
-        $responden->deskripsi = $request->input('deskripsi');
+        DB::table('respondens')->insert(
+            ['id_responden'=>$request->id_responden,
+            'identitas_instansi_perusahaan'=>$request->identitas_instansi_perusahaan,
+            'alamat'=>$request->alamat,
+            'no_telpon'=>$request->no_telpon,
+            'email'=>$request->email,
+            'pengisi_lembar_evaluasi'=>$request->pengisi_lembar_evaluasi,
+            'jabatan'=>$request->jabatan,
+            'deskripsi'=>$request->deskripsi
 
-        $responden->save();
-
-        return redirect('/dataResponden')->with('success', 'Data Telah Tersimpan');
+        ]);
+        return redirect('/kelolaController');
 
     }
 
@@ -69,6 +68,9 @@ class RespondenController extends Controller
         return $responden::all();
     }
 
-   
+   public function destroy($id)
+    {
+        return $id_responden;
+    }
 
 }

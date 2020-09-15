@@ -5,19 +5,21 @@
 
 
 @section('container')
+
+
+
+
 <h1 class="h3 mb-4 text-gray-800">Data Responden</h1>
 <div class="container">
-<div class="mb-3">
+
   <form class="form-inline my-2 my-lg-0" method="GET" action="/dataResponden">
       <input name="cari" class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
       <button class="btn btn-outline-primary my-2 my-sm-0" type="submit">Search</button>
   </form>
 
-</div>
 
 <table class="table table-striped">
   <thead>
-    <tr>
       <th scope="col">#</th>
       <th scope="col">ID Responden</th>
       <th scope="col">Identeitas Perusahaan</th>
@@ -46,16 +48,21 @@
       <td> {{ $res->deskripsi }} </td>
       <td>
         <!-- Button trigger modal -->
-        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+        <button type="button" class="btn btn-primary" data-toggle="modal">
           Ubah
         </button>
+        <form action="{{$res->id_responden}}" method="post" class="d-inline">
+        @method('delete')
+        @csrf 
+        <button type="button" class="badge badge-danger">Hapus</button>
+        </form>
 
         <!-- Modal -->
         <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
           <div class="modal-dialog">
             <div class="modal-content">
               <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                <h5 class="modal-title" id="exampleModalLabel">Ubah Data Responden</h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                   <span aria-hidden="true">&times;</span>
                 </button>
