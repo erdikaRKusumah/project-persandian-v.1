@@ -40,7 +40,7 @@ class KelolaController extends Controller
      */
     public function store(Request $request)
     {
-        $pilihan = implode(",", $request->pilihan);
+        $pilihan = json_encode($request->pilihan);
         
         DB::table('pertanyaan')->insert(
             ['id_kategori' => $request->id_kategori,
