@@ -7,7 +7,13 @@
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
-
+    <style>
+	.garis_vertikal{
+		border-left: 1px black solid;
+		height: 170px;
+		width: 0px;
+	}
+	</style>
     <title>Login</title>
   </head>
   <body>
@@ -16,12 +22,15 @@
       <div class="col-6">
         <div class="card o-hidden shadow-lg my-5">
           <div class="col">
-            <img src="{{ ('img/aa.png')}}" width="250px" class="rounded mx-auto d-block">
+            <img src="{{ ('img/final2.png')}}" width="450px" class="rounded mx-auto d-block">
+          
           </div>
+          
+          
             <div class="col">
               <div class="p-5">
                 <div class="text-center">
-                  <h1 class="h4 text-gray-900 mb-4">Halaman Login</h1>
+                  <h3 class="h4 text-gray-900 mb-4">Selamat Datang di Indeks Keamanan Informasi (Indeks KAMI)</h3>
                 </div>
                 <form class="user" method="POST" action="{{ route('login') }}">
                   @csrf      
