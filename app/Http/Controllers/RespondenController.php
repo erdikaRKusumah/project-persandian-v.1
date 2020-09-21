@@ -4,9 +4,15 @@ namespace App\Http\Controllers;
 
 use App\Responden;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class RespondenController extends Controller
 {
+
+    public function index() {
+        $pertanyaan = DB::table('pertanyaan')->get();
+        return view('responden.isiKuesioner', ['pertanyaan'=> $pertanyaan]);
+    }
     // public function index()
     // {
     //     // //

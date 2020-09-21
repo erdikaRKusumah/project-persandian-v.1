@@ -52,3 +52,5 @@ Route::get('/dataRespondenDetail}', 'RespondenController@show');
 
 Route::get('/kelolaPertanyaan', 'KelolaController@index');
 Route::delete('/kelolaPertanyaan/{id_pertanyaan}', 'KelolaController@destroy');
+
+Route::get('/isiKuesioner', 'RespondenController@index');

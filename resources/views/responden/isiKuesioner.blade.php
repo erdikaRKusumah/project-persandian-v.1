@@ -19,15 +19,17 @@
         </tr>
     </thead>
     <tbody>
+    @foreach($pertanyaan as $per)
         <tr>
-        <th scope="row">1.1</th>
-        <td colspan="3">Nilai investasi sistem elektronik yang terpasang
+        <th scope="row">1.{{$loop->iteration}}</th>
+        <td colspan="3">{{ $per->pertanyaan}}
            <div> <input type='radio' name='asfa$i$data[groupId]' value='A'> Lebih dari Rp.30 Miliar  </div>
            <div> <input type='radio' name='asfa$i$data[groupId]' value='B'> Lebih dari Rp.3 Miliar s/d Rp.30 Miliar </div>
            <div> <input type='radio' name='asfa$i$data[groupId]' value='C'> Kurang dari Rp.3 Miliar </div>
         </td>
         </tr>
-        <tr>
+    @endforeach
+        <!-- <tr>
         <th scope="row">1.2</th>
         <td colspan="3">Total anggaran operasional tahunan yang dialokasikan untuk pengelolaan Sistem Elektronik
             <div class="form-check">
@@ -235,7 +237,7 @@
                 </label>
             </div>
         </td>
-        </tr>
+        </tr> -->
 
     </tbody>
     </table>
