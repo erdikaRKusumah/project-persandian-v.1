@@ -1,34 +1,68 @@
 @extends('templates/master')
 
 @section('container')
-<h1>Isi Kuesioner</h1>
-    <div class="progress" style="height: 1px;">
-        <div class="progress-bar" role="progressbar" style="width: 15%;" aria-valuenow="15" aria-valuemin="0" aria-valuemax="100"></div>
-        </div>
-        <div class="progress" style="height: 20px;">
-        <div class="progress-bar" role="progressbar" style="width: 15%;" aria-valuenow="15" aria-valuemin="0" aria-valuemax="100"></div>
-    </div>
-<h4 class="mt-3"><strong>Bagian I : Kategori Sistem Elektronik</strong></h4>
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <div class="card">
+                <div class="card-header">
+                    <h1>Isi Kuesioner</h1>
+                        <div class="progress" style="height: 1px;">
+                            <div class="progress-bar" role="progressbar" style="width: 15%;" aria-valuenow="15" aria-valuemin="0" aria-valuemax="100"></div>
+                            </div>
+                            <div class="progress" style="height: 20px;">
+                            <div class="progress-bar" role="progressbar" style="width: 15%;" aria-valuenow="15" aria-valuemin="0" aria-valuemax="100"></div>
+                        </div>
+                    <h4 class="mt-3"><strong>Bagian I : Kategori Sistem Elektronik</strong></h4>
 
-<p>Bagian ini mengevaluasi tingkat atau kategori sistem elektronik yang digunakan</p>
-    <table class="table table-bordered">
-    <thead>
-        <tr>
-        <th scope="col">#</th>
-        <th scope="col" colspan="3"><strong>Karakteristik Instansi/Perusahaan</strong></th>
-        </tr>
-    </thead>
-    <tbody>
-    @foreach($pertanyaan as $per)
-        <tr>
-        <th scope="row">1.{{$loop->iteration}}</th>
-        <td colspan="3">{{ $per->pertanyaan}}
-           <div> <input type='radio' name='asfa$i$data[groupId]' value='A'> Lebih dari Rp.30 Miliar  </div>
-           <div> <input type='radio' name='asfa$i$data[groupId]' value='B'> Lebih dari Rp.3 Miliar s/d Rp.30 Miliar </div>
-           <div> <input type='radio' name='asfa$i$data[groupId]' value='C'> Kurang dari Rp.3 Miliar </div>
-        </td>
-        </tr>
-    @endforeach
+                    <p>Bagian ini mengevaluasi tingkat atau kategori sistem elektronik yang digunakan</p>
+                </div>
+
+                <div class="card-body">
+                    <table class="table table-bordered">
+                    <thead>
+                        <tr>
+                        <th scope="col">#</th>
+                        <th scope="col" colspan="3"><strong>Karakteristik Instansi/Perusahaan</strong></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                    @foreach($pertanyaan as $per)
+                        <tr>
+                        <th scope="row">1.{{$loop->iteration}}</th>
+                        <td colspan="3">{{ $per->pertanyaan}}
+                        <div> <input type='radio' name='pilihanA' value='A'> {{$per->pilihan}}  </div>
+                        <div> <input type='radio' name='pilihanB' value='B'> {{$per->pilihan}}  </div>
+                        <div> <input type='radio' name='pilihanC' value='C'> {{$per->pilihan}}  </div>
+                        </td>
+                        </tr>
+                    @endforeach
+                    </tbody>
+                    </table>
+
+                    <nav aria-label="...">
+                    <ul class="pagination">
+                        <li class="page-item disabled">
+                        <a class="page-link" href="#" tabindex="-1" aria-disabled="true">Previous</a>
+                        </li>
+                        <li class="page-item"><a class="page-link" href="#">1</a></li>
+                        <li class="page-item active" aria-current="page">
+                        <a class="page-link" href="#">2 <span class="sr-only">(current)</span></a>
+                        </li>
+                        <li class="page-item"><a class="page-link" href="#">3</a></li>
+                        <li class="page-item">
+                        <a class="page-link" href="#">Next</a>
+                        </li>
+                    </ul>
+                    </nav>
+                                    
+                </div>
+            </div>        
+        </div>    
+    </div>
+</div>
+
+
         <!-- <tr>
         <th scope="row">1.2</th>
         <td colspan="3">Total anggaran operasional tahunan yang dialokasikan untuk pengelolaan Sistem Elektronik
@@ -239,24 +273,9 @@
         </td>
         </tr> -->
 
-    </tbody>
-    </table>
+    
 
-    <nav aria-label="...">
-    <ul class="pagination">
-        <li class="page-item disabled">
-        <a class="page-link" href="#" tabindex="-1" aria-disabled="true">Previous</a>
-        </li>
-        <li class="page-item"><a class="page-link" href="#">1</a></li>
-        <li class="page-item active" aria-current="page">
-        <a class="page-link" href="#">2 <span class="sr-only">(current)</span></a>
-        </li>
-        <li class="page-item"><a class="page-link" href="#">3</a></li>
-        <li class="page-item">
-        <a class="page-link" href="#">Next</a>
-        </li>
-    </ul>
-    </nav>
+    
 
 
 @endsection
