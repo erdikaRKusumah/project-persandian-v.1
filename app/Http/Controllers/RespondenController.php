@@ -49,23 +49,23 @@ class RespondenController extends Controller
             'deskripsi' => 'required',
         ]);
 
-        // Responden::create($request->all());
+        Responden::create($request->all());
         // return redirect('/isiKuesioner');
 
-        $responden = implode(",", $request->pilihan);
+        // $responden = implode(",", $request->pilihan);
 
-        DB::table('respondens')->insert(
-            ['id_responden'=>$request->id_responden,
-            'identitas_instansi_perusahaan'=>$request->identitas_instansi_perusahaan,
-            'alamat'=>$request->alamat,
-            'no_telpon'=>$request->no_telpon,
-            'email'=>$request->email,
-            'pengisi_lembar_evaluasi'=>$request->pengisi_lembar_evaluasi,
-            'jabatan'=>$request->jabatan,
-            'deskripsi'=>$request->deskripsi
+        // DB::table('respondens')->insert(
+        //     ['id_responden'=>$request->id_responden,
+        //     'identitas_instansi_perusahaan'=>$request->identitas_instansi_perusahaan,
+        //     'alamat'=>$request->alamat,
+        //     'no_telpon'=>$request->no_telpon,
+        //     'email'=>$request->email,
+        //     'pengisi_lembar_evaluasi'=>$request->pengisi_lembar_evaluasi,
+        //     'jabatan'=>$request->jabatan,
+        //     'deskripsi'=>$request->deskripsi
 
-        ]);
-        return redirect('/kelolaController');
+        // ]);
+        return redirect('/isiKuesioner');
 
     }
 

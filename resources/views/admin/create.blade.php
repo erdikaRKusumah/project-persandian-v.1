@@ -16,7 +16,7 @@
     <label for="id_kategori">Identitas Instansi atau Perusahaan :</label>
       <select id="inputState" class="form-control @error('id_kategori') is-invalid @enderror" name="id_kategori" >
       @foreach($kategori as $kat)
-        <option selected>{{ $kat->id_kategori}}</option>
+        <option selected>{{ $kat->id}}</option>
         @endforeach
       </select>
     

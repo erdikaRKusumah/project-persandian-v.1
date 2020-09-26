@@ -20,7 +20,7 @@ class AdminController extends Controller
     public function index()
     {
 
-        $kategori = DB::table('kategori')->get();
+        $kategori = DB::table('kategoris')->get();
         return view('admin.halamanAdmin', ['kategori'=> $kategori]);
     }
 

@@ -17,7 +17,7 @@ class KelolaController extends Controller
      */
     public function index()
     {
-        $pertanyaan = DB::table('pertanyaan')->get();
+        $pertanyaan = DB::table('pertanyaans')->get();
         return view('admin.kelolaPertanyaan', ['pertanyaan'=> $pertanyaan]);
     }
 
@@ -28,7 +28,7 @@ class KelolaController extends Controller
      */
     public function create()
     {
-        $kategori = DB::table('kategori')->get();
+        $kategori = DB::table('kategoris')->get();
         return view('admin.create', ['kategori'=> $kategori]);
     }
 
@@ -48,7 +48,7 @@ class KelolaController extends Controller
         // $id_kategori = DB::table('kategori')->select('id_kategori')->where('kategori', $request->id_kategori)->get();
        
         
-        DB::table('pertanyaan')->insert(
+        DB::table('pertanyaans')->insert(
             ['id_kategori' => $request->id_kategori,
             'pertanyaan'=> $request->pertanyaan,
             'pilihan'=>$pilihan]

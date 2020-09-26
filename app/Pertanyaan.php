@@ -10,7 +10,7 @@ class Pertanyaan extends Model
         'pilihan' => 'array',
     ];
 
-    protected $fillable = ['id_pertanyaan', 'id_kategori', 'pertanyaan', 'pilihan'];
+    protected $fillable = ['id_kategori', 'pertanyaan', 'pilihan'];
 
     public function jawaban() {
         return $this->hasMany(Jawaban::class);

@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Jawaban extends Model
 {
-    protected $fillable = ['id_jawaban', 'id_pertanyaan', 'id_responden', 'jawaban', 'skor',];
+    protected $fillable = ['id_pertanyaan', 'id_responden', 'jawaban', 'skor',];
 
     public function responden() {
         return $this->belongsTo(Responden::class);
