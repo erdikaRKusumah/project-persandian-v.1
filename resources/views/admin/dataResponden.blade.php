@@ -51,11 +51,10 @@
         <button type="button" class="btn btn-primary" data-toggle="modal">
           Ubah
         </button>
-        <form action="{{$res->id_responden}}" method="post" class="d-inline">
-        @method('delete')
-        @csrf 
-        <button type="button" class="badge badge-danger">Hapus</button>
-        </form>
+        <button type="button" class="btn btn-primary" data-toggle="modal">
+          Hapus
+        </button>
+        
 
         <!-- Modal -->
         <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
