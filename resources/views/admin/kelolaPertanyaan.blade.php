@@ -32,7 +32,7 @@
     @foreach($pertanyaan as $per)
     <tr>
       <th scope="row"> {{ $loop->iteration}} </th>
-      <td> {{ $per->id_pertanyaan }} </td>
+      <td> {{ $per->id }} </td>
       <td> {{ $per->id_kategori }} </td>
       <td> {{ $per->pertanyaan}} </td>
       <td> {{ $per->pilihan}} </td>
@@ -40,7 +40,7 @@
         <button type="button" class="badge badge-success" data-toggle="modal" data-target="#exampleModal">
           Ubah
         </button>
-        <form action="{{$per->id_pertanyaan}}" method="post" class="d-inline">
+        <form action="{{$per->id}}" method="post" class="d-inline">
         @method('delete')
         @csrf 
         <button type="button" class="badge badge-danger">Hapus</button>

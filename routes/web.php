@@ -19,6 +19,8 @@ Route::post('/','otentikasi\OtentikasiController@login')->name('login');
 //2
 Route::get('/','otentikasi\OtentikasiController@index')->name('login');
 
+Route::get('reload-captcha', 'otentikasi\OtentikasiController@reloadCaptcha');
+
 // Route::group(['middleware' => 'auth'], function(){
 //     Route::get('/isiData', function () {
     

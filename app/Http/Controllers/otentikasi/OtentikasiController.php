@@ -22,6 +22,12 @@ class OtentikasiController extends Controller
         //         return redirect('/dashboard');
         //     }
         // }
+        $request->validate([
+            'email' => 'required|email',
+            'password' => 'required',
+            'captcha' => 'required|captcha'
+        ]);
+
         if (Auth::attempt(['email' =>$request->email, 'password' => $request->password])) {
             if ($request->email == 'admin1@gmail.com') {
                 return redirect ('/halamanAdmin');
@@ -29,6 +35,12 @@ class OtentikasiController extends Controller
             return redirect('/isiData');
         }
         return redirect('/')->with('message','Email atau password salah');
+    }
+
+
+    public function reloadCaptcha()
+    {
+        return response()->json(['captcha'=> captcha_img()]);
     }
     public function logout(Request $request){
         // $request->session()->flush();
