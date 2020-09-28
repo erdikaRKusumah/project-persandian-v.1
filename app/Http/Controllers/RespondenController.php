@@ -2,10 +2,12 @@
 
 namespace App\Http\Controllers;
 
-use App\Responden;
+use App\Pertanyaan;
 use App\Kategori;
-use Illuminate\Http\Request;
+use App\Jawaban;
+use App\Responden;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Http\Request;
 
 class RespondenController extends Controller
 {
@@ -81,7 +83,8 @@ class RespondenController extends Controller
 
    public function destroy($id)
     {
-        return $id_responden;
+       DB::table('respondens')->where('id',$id)->delete();
+        return redirect('/dataResponden');
     }
 
 }

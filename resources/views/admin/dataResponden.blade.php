@@ -12,10 +12,21 @@
 <h1 class="h3 mb-4 text-gray-800">Data Responden</h1>
 <div class="container">
 
-  <form class="form-inline my-2 my-lg-0" method="GET" action="/dataResponden">
+
+<ul class="nav justify-content-end">
+  <li class="nav-item l-6">
+    <a class="btn btn-primary" href="/tambahPertanyaan" role="button">Tambah Pertanyaan</a>
+  </li>
+  <li class="nav-item l-6">
+    <a class="" href=""></a>
+  </li>
+   <form class="form-inline my-2 my-lg-0" method="GET" action="/dataResponden">
       <input name="cari" class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
       <button class="btn btn-outline-primary my-2 my-sm-0" type="submit">Search</button>
   </form>
+</ul>
+ 
+
 
 
 <table class="table table-striped">
@@ -48,12 +59,16 @@
       <td> {{ $res->deskripsi }} </td>
       <td>
         <!-- Button trigger modal -->
-        <button type="button" class="btn btn-primary" data-toggle="modal">
-          Ubah
-        </button>
-        <button type="button" class="btn btn-primary" data-toggle="modal">
-          Hapus
-        </button>
+        <a href="" class="badge badge-success" data-toggle="modal" data-target="#exampleModal">
+            Ubah
+          </a>
+        <button type="submit" class="badge badge-danger" data-toggle="modal" data-target="#hapusData">Hapus</button>
+      </td>
+    </tr>
+    @endforeach
+  </tbody>
+</table>
+</div>
         
 
         <!-- Modal -->
@@ -68,7 +83,6 @@
               </div>
 
            <form class="need-validation" action="{{ action('RespondenController@store') }}" method="POST">
-            {{ csrf_field() }}
               <div class="modal-body">
                     <div class="form-group">
                       <label>ID Responden :</label>
@@ -125,15 +139,35 @@
             </div>
           </div>
         </div>
-      </td>
-    </tr>
-    @endforeach
-  </tbody>
-</table>
+
+
+<!-- Button trigger modal Delete -->
+
+
+<!-- Modal -->
+<div class="modal fade" id="hapusData" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        Apakah anda yakin?
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <form action="/dataResponden/{{$res->id}}" method="post" class="d-inline">
+        @method('delete')
+        @csrf
+        <button type="button" class="btn btn-primary">Save changes</button>
+        </form>
+      </div>
+    </div>
+  </div>
 </div>
-
-
-<!--  -->
 
 
 @endsection
