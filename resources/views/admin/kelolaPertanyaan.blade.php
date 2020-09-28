@@ -37,13 +37,13 @@
       <td> {{ $per->pertanyaan}} </td>
       <td> {{ $per->pilihan}} </td>
       <td>
-        <button type="button" class="badge badge-success" data-toggle="modal" data-target="#exampleModal">
-          Ubah
-        </button>
-        <form action="{{$per->id}}" method="post" class="d-inline">
+      <a href="" class="badge badge-success" data-toggle="modal" data-target="#exampleModal-{{$per->id}}">
+            Ubah
+          </a>
+        <form action="/kelolaPertanyaan/{{$per->id}}" method="post" class="d-inline">
         @method('delete')
         @csrf 
-        <button type="button" class="badge badge-danger">Hapus</button>
+        <button type="submit" class="badge badge-danger">Hapus</button>
         </form>
       </td>
     </tr>
@@ -53,7 +53,8 @@
 </div>
 
 <!-- Modal -->
-<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+@foreach($pertanyaan as $data)
+<div class="modal fade" id="exampleModal-{{$data->id}}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
@@ -63,37 +64,38 @@
         </button>
       </div>
       <div class="modal-body">
-        <form action="">
+      <form action="{{ url('/edit/'. $data->id) }}" method="POST">
           <div class="form-group row">
             <label for="inputEmail3" class="col-sm-5 col-form-label">Id Pertanyaan</label>
             <div class="col-sm-8">
-              <input type="email" class="form-control" id="inputEmail3">
+              <input type="text" readonly class="form-control-plaintext" class="form-control" value="{{$data->id}}">
             </div>
           </div>
           <div class="form-group row">
             <label for="inputPassword3" class="col-sm-5 col-form-label">Id Kategori</label>
             <div class="col-sm-8">
-              <input type="password" class="form-control" id="inputPassword3">
+              <input type="text" readonly class="form-control-plaintext" class="form-control" value="{{$data->id_kategori}}">
             </div>
           </div>
           <div class="form-group row">
             <label for="inputEmail3" class="col-sm-5 col-form-label">Pilihan</label>
             <div class="col-sm-8">
-              <input type="email" class="form-control" id="inputEmail3">
+            <input type="text" class="form-control" id="inputEmail3" value="{{$data->pilihan}}">
             </div>
           </div>
           <div class="form-group">
             <label for="exampleFormControlTextarea1">Pertanyaan</label>
-            <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+          <textarea class="form-control" id="exampleFormControlTextarea1" rows="3">{{$data->pertanyaan}}</textarea>
           </div>
-        </form>
       </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Save changes</button>
-      </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          <button type="submit" class="btn btn-primary">Save changes</button>
+        </div>
+      </form>
     </div>
   </div>
 </div>
+@endforeach
 
 @endsection

@@ -75,9 +75,13 @@ class KelolaController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Request $request, $id = null)
     {
-        //
+        if($request->isMethod('post')) {
+            $data = $request->all();
+            Pertanyaan::where(['id'=>$id])->update(['id'=>$data['id'], 'id_kategori'=>$data['id_kategori'], 'pilihan'=>$data['pilihan'], 'pertanyaan'=>$data['pertanyaan']]);
+            return redirect()->back();
+        }
     }
 
     /**
@@ -100,6 +104,7 @@ class KelolaController extends Controller
      */
     public function destroy($id)
     {
-        return $id_pertanyaan;
+        DB::table('pertanyaans')->where('id',$id)->delete();
+        return redirect('/kelolaPertanyaan');
     }
 }

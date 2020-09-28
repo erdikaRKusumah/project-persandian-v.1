@@ -53,6 +53,7 @@ Route::get('/dataResponden', 'AdminController@show');
 Route::get('/dataRespondenDetail}', 'RespondenController@show');
 
 Route::get('/kelolaPertanyaan', 'KelolaController@index');
-Route::delete('/kelolaPertanyaan/{id_pertanyaan}', 'KelolaController@destroy');
+Route::delete('/kelolaPertanyaan/{id}', 'KelolaController@destroy');
 
 Route::get('/isiKuesioner', 'RespondenController@index');
+Route::match(['get', 'post'], '/edit{id}', 'KelolaController@edit');

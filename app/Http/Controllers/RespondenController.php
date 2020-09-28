@@ -3,16 +3,21 @@
 namespace App\Http\Controllers;
 
 use App\Responden;
+use App\Kategori;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
 class RespondenController extends Controller
 {
 
-    public function index() {
-        $pertanyaan = DB::table('pertanyaan')->get();
-        return view('responden.isiKuesioner', ['pertanyaan'=> $pertanyaan]);
+    public function index(Kategori $kategori) {
+        // $pertanyaan = DB::table('pertanyaans')->get();
+        // return view('responden.isiKuesioner', ['pertanyaan'=> $pertanyaan]);
+        
+        $kategori->pilihan = unserialize($kategori->pilihan);
+        return view('responden.isiKuesioner', compact('kategori'));
     }
+    
     // public function index()
     // {
     //     // //
