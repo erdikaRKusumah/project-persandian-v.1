@@ -15,14 +15,14 @@ class CreatePertanyaansTable extends Migration
     {
         Schema::create('pertanyaans', function (Blueprint $table) {
             $table->increments('id');
-            $table->unsignedInteger('id_kategori')->nullable();
+            $table->unsignedInteger('kategori_id')->nullable();
             $table->string('pertanyaan');
             $table->string('pilihan');
             $table->timestamps();
         });
 
             Schema::table('pertanyaans', function(Blueprint $table){
-                $table->foreign('id_kategori')->references('id')->on('kategoris')->onDelete('cascade')->onUpdate('cascade');
+                $table->foreign('kategori_id')->references('id')->on('kategoris')->onDelete('cascade')->onUpdate('cascade');
                       
             
         });

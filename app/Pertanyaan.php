@@ -13,11 +13,11 @@ class Pertanyaan extends Model
     protected $fillable = ['id_kategori', 'pertanyaan', 'pilihan'];
     protected $table = 'pertanyaans';
 
-    public function jawaban() {
+    public function jawabans() {
         return $this->hasMany(Jawaban::class);
     }
 
-    public function kategori() {
+    public function kategoris() {
         return $this->belongsTo(Kategori::class);
     }
 

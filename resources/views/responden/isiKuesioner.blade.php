@@ -23,20 +23,21 @@
                     <thead>
                         <tr>
                         <th scope="col">#</th>
-                        <th scope="col" colspan="3"><strong>Karakteristik Instansi/Perusahaan</strong></th>
+                        <th scope="col" colspan="3"><strong>{{$kategori->sub_kategori}}</strong></th>
                         </tr>
                     </thead>
                     <tbody>
-                    {{-- @foreach($kategori as $per)
+                    
+                   @foreach($kategori->pertanyaans as $key=>$pertanyaan)
                         <tr>
                         <th scope="row">1.{{$loop->iteration}}</th>
-                        <td colspan="3">{{ $per->pertanyaan}}
-                    @endforeach --}}
-                    {{-- @foreach($kategori->pilihan as $key=>$value)
-                        <div> <input type='radio' name='pilihanA' value=''> {{$value}}  </div> --}}
-                        {{-- <div> <input type='radio' name='pilihanB' value='B'> {{$per->pilihan}}  </div>
-                        <div> <input type='radio' name='pilihanC' value='C'> {{$per->pilihan}}  </div> --}}
-                    {{-- @endforeach --}}
+                        <td colspan="3">{{ $pertanyaan->pertanyaan}}
+                        <div> <input type='radio' name='pilihanA' value='A'> {{$pertanyaan->pilihan['0']}}  </div>
+                        <div> <input type='radio' name='pilihanB' value='B'> {{$pertanyaan->pilihan['1']}}  </div>
+                        <div> <input type='radio' name='pilihanC' value='C'> {{$pertanyaan->pilihan['2']}}  </div>
+                        </td>
+                        </tr>
+                    @endforeach
                         </td>
                         </tr>
                     </tbody>

@@ -37,15 +37,17 @@ Route::group(['middleware' => 'auth'], function(){
     
         return view('/responden/isiData');
     });
-    Route::get('/isiKuesioner', function () {
-    
-        return view('/responden/isiKuesioner');
-    });
+    // Route::get('/isiKuesioner', function () {
+    //         return view('/responden/isiKuesioner');
+    //     });
+        
+        
     Route::get('logout','otentikasi\OtentikasiController@logout')->name('logout');
 }); 
 // Route::get('crud/simpanData', 'SimpanDataController@simpan')->name('crud.simpan');
 Route::resource('responden', 'RespondenController');
 Route::post('/pertanyaan', 'KelolaController@store');
+Route::get('/isiKuesioner/{kategori}', 'RespondenController@index');
 
 Route::get('/tambahPertanyaan', 'KelolaController@create');
 Route::get('/halamanAdmin', 'AdminController@index');

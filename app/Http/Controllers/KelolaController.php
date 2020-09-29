@@ -5,6 +5,7 @@ use App\Pertanyaan;
 use App\Kategori;
 use App\Jawaban;
 use App\Responden;
+use App\Http\Requests;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
 
@@ -38,24 +39,25 @@ class KelolaController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(Request $request, Pertanyaan $pertanyaan)
     {
         
-        $pilihan = json_encode($request->pilihan);
+        // $pilihan = json_encode($request->pilihan);
         
         //aaaa
 
         // $id_kategori = DB::table('kategori')->select('id_kategori')->where('kategori', $request->id_kategori)->get();
-       
+        $arr = $request->all();
+        $surveyItem = $pertanyaan->create($arr);
         
-        DB::table('pertanyaans')->insert(
-            ['id_kategori' => $request->id_kategori,
-            'pertanyaan'=> $request->pertanyaan,
-            'pilihan'=>$pilihan]
-        );
+        // DB::table('pertanyaans')->insert(
+        //     ['id_kategori' => $request->id_kategori,
+        //     'pertanyaan'=> $request->pertanyaan,
+        //     'pilihan'=>$request->pilihan]
+        // );
         
 
-        return redirect('/halamanAdmin');
+        return redirect("/halamanAdmin");
     }
 
     /**

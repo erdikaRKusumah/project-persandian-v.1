@@ -9,16 +9,30 @@ use App\Responden;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
 
+
 class RespondenController extends Controller
 {
 
     public function index(Kategori $kategori) {
         // $pertanyaan = DB::table('pertanyaans')->get();
-        // return view('responden.isiKuesioner', ['pertanyaan'=> $pertanyaan]);
+
+    //     $pilihan = $pertanyaan->pilihan;
+    //     $create_array = [];
+    //     foreach ($this->$pilihan as $key => $value) {
+    //     # code...
+    //     $create_array[$key] = $value;
+    // }
+    // return $create_array;
         
         $kategori->pilihan = unserialize($kategori->pilihan);
         return view('responden.isiKuesioner', compact('kategori'));
+        
+        
+        
+        // return view('responden.isiKuesioner');
     }
+
+    
     
     // public function index()
     // {
