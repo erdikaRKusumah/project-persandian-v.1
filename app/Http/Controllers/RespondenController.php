@@ -60,6 +60,7 @@ class RespondenController extends Controller
     public function store(Request $request)
     {
         $request->validate([
+            'id_responden' => 'required',
             'identitas_instansi_perusahaan' => 'required',
             'alamat' => 'required',
             'no_telpon' => 'required',
@@ -70,7 +71,28 @@ class RespondenController extends Controller
             'deskripsi' => 'required',
         ]);
 
-        Responden::create($request->all());
+        $resId = $request->res_id;
+        Respondens::updateOrCreate([
+            ['id' => $res_id],
+            'id_responden' => $request->id_responden,
+            'identitas_instansi_perusahaan' => $request->identitas_instansi_perusahaan,
+            'alamat' => $request->alamat,
+            'no_telpon'=>$request->no_telpon,
+            'email'=>$request->email,
+            'jabatan'=>$request->jabatan,
+            'tgl_pengisian'=>$request->tgl_pengisian,
+            'deskripsi'=>$request->deskripsi
+
+        ]);
+        if(empty($request->res_id))
+            $msg = 'Customer entry created successfully.';
+        else
+            $msg = 'Customer data is updated successfully';
+        return redirect()->route('dataResponden.index')->with('success',$msg);
+    }
+
+
+        // Responden::create($request->all());
         // return redirect('/isiKuesioner');
 
         // $responden = implode(",", $request->pilihan);
@@ -86,19 +108,24 @@ class RespondenController extends Controller
         //     'deskripsi'=>$request->deskripsi
 
         // ]);
-        return redirect('/isiKuesioner');
+        // return redirect('/isiKuesioner');
 
-    }
 
-    public function show(respondens $responden)
+    function show(responden $responden)
     {
         return $responden::all();
     }
 
-   public function destroy($id)
+    function destroy($id)
     {
        DB::table('respondens')->where('id',$id)->delete();
         return redirect('/dataResponden');
+    }
+
+     function edit($id){
+        $where = array('id' => $id);
+        $responden = Respondens::where($where)->first();
+        return Response::json($responden);
     }
 
 }

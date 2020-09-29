@@ -55,6 +55,8 @@ Route::get('/halamanAdmin', 'AdminController@index');
 Route::get('/dataResponden', 'AdminController@show');
 
 Route::delete('/dataResponden/{id}', 'RespondenController@destroy');
+Route::get('/dataResponden/{id}/edit/', 'RespondenController@edit');
+
 Route::get('/dataRespondenDetail', 'RespondenController@show');
 
 Route::get('/kelolaPertanyaan', 'KelolaController@index');

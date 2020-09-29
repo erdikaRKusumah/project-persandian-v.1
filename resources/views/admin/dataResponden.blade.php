@@ -62,7 +62,11 @@
         <a href="" class="badge badge-success" data-toggle="modal" data-target="#exampleModal">
             Ubah
           </a>
-        <button type="submit" class="badge badge-danger" data-toggle="modal" data-target="#hapusData">Hapus</button>
+        <form action="/dataResponden/{{$res->id}}" method="post" class="d-inline">
+        @method('delete')
+        @csrf
+        <button type="button" class="badge badge-danger">Hapus</button>
+        </form>
       </td>
     </tr>
     @endforeach
@@ -83,6 +87,8 @@
               </div>
 
            <form class="need-validation" action="{{ action('RespondenController@store') }}" method="POST">
+          <input type="hidden" name="res_id" type="res_id">
+          @csrf
               <div class="modal-body">
                     <div class="form-group">
                       <label>ID Responden :</label>
@@ -159,11 +165,7 @@
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-        <form action="/dataResponden/{{$res->id}}" method="post" class="d-inline">
-        @method('delete')
-        @csrf
-        <button type="button" class="btn btn-primary">Save changes</button>
-        </form>
+        
       </div>
     </div>
   </div>
