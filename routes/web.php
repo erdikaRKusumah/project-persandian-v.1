@@ -46,13 +46,17 @@ Route::group(['middleware' => 'auth'], function(){
 // Route::get('crud/simpanData', 'SimpanDataController@simpan')->name('crud.simpan');
 Route::resource('responden', 'RespondenController');
 Route::post('/pertanyaan', 'KelolaController@store');
+
 Route::get('/tambahPertanyaan', 'KelolaController@create');
 Route::get('/halamanAdmin', 'AdminController@index');
 
 Route::get('/dataResponden', 'AdminController@show');
-Route::get('/dataRespondenDetail}', 'RespondenController@show');
+
+Route::delete('/dataResponden/{id}', 'RespondenController@destroy');
+Route::get('/dataRespondenDetail', 'RespondenController@show');
 
 Route::get('/kelolaPertanyaan', 'KelolaController@index');
-Route::delete('/kelolaPertanyaan/{id_pertanyaan}', 'KelolaController@destroy');
+Route::delete('/kelolaPertanyaan/{id}', 'KelolaController@destroy');
 
 Route::get('/isiKuesioner', 'RespondenController@index');
+Route::match(['get', 'post'], '/edit{id}', 'KelolaController@edit');

@@ -11,6 +11,7 @@ class Pertanyaan extends Model
     ];
 
     protected $fillable = ['id_kategori', 'pertanyaan', 'pilihan'];
+    protected $table = 'pertanyaans';
 
     public function jawaban() {
         return $this->hasMany(Jawaban::class);
@@ -20,5 +21,4 @@ class Pertanyaan extends Model
         return $this->belongsTo(Kategori::class);
     }
 
-    protected $table = 'pertanyaan';
 }

@@ -27,16 +27,18 @@
                         </tr>
                     </thead>
                     <tbody>
-                    @foreach($pertanyaan as $per)
+                    {{-- @foreach($kategori as $per)
                         <tr>
                         <th scope="row">1.{{$loop->iteration}}</th>
                         <td colspan="3">{{ $per->pertanyaan}}
-                        <div> <input type='radio' name='pilihanA' value='A'> {{$per->pilihan}}  </div>
-                        <div> <input type='radio' name='pilihanB' value='B'> {{$per->pilihan}}  </div>
-                        <div> <input type='radio' name='pilihanC' value='C'> {{$per->pilihan}}  </div>
+                    @endforeach --}}
+                    {{-- @foreach($kategori->pilihan as $key=>$value)
+                        <div> <input type='radio' name='pilihanA' value=''> {{$value}}  </div> --}}
+                        {{-- <div> <input type='radio' name='pilihanB' value='B'> {{$per->pilihan}}  </div>
+                        <div> <input type='radio' name='pilihanC' value='C'> {{$per->pilihan}}  </div> --}}
+                    {{-- @endforeach --}}
                         </td>
                         </tr>
-                    @endforeach
                     </tbody>
                     </table>
 
@@ -45,9 +47,9 @@
                         <li class="page-item disabled">
                         <a class="page-link" href="#" tabindex="-1" aria-disabled="true">Previous</a>
                         </li>
-                        <li class="page-item"><a class="page-link" href="#">1</a></li>
-                        <li class="page-item active" aria-current="page">
-                        <a class="page-link" href="#">2 <span class="sr-only">(current)</span></a>
+                        <li class="page-item active"><a class="page-link" href="#">1</a></li>
+                        <li class="page-item" aria-current="page">
+                        <a class="page-link" href="#">2</a>
                         </li>
                         <li class="page-item"><a class="page-link" href="#">3</a></li>
                         <li class="page-item">
