@@ -46,21 +46,38 @@ Route::group(['middleware' => 'auth'], function(){
 }); 
 // Route::get('crud/simpanData', 'SimpanDataController@simpan')->name('crud.simpan');
 Route::resource('responden', 'RespondenController');
-Route::post('/pertanyaan', 'KelolaController@store');
-Route::get('/isiKuesioner/{kategori}', 'RespondenController@index');
+
+
+// CONTROLLER ADMIN/RESPONDEN JANGAN DIUBAH MEH TEU LIEUR!
+
+// Create HalamanAdmin
 
 Route::get('/tambahPertanyaan', 'KelolaController@create');
-Route::get('/halamanAdmin', 'AdminController@index');
+
+
+// Show (harusnya pake parameter)
 
 Route::get('/dataResponden', 'AdminController@show');
-
-Route::delete('/dataResponden/{id}', 'RespondenController@destroy');
-Route::get('/dataResponden/{id}/edit/', 'RespondenController@edit');
-
 Route::get('/dataRespondenDetail', 'RespondenController@show');
 
+
+// Index ADMIN / CONTROLLER
+Route::get('/halamanAdmin', 'AdminController@index');
+Route::get('/isiKuesioner', 'RespondenController@index');
+Route::get('/isiKuesioner/{kategori}', 'RespondenController@index');
 Route::get('/kelolaPertanyaan', 'KelolaController@index');
+
+
+// DELETE
+Route::delete('/dataResponden/{id}', 'RespondenController@destroy');
 Route::delete('/kelolaPertanyaan/{id}', 'KelolaController@destroy');
 
-Route::get('/isiKuesioner', 'RespondenController@index');
+
+// UPDATE
+Route::get('/dataResponden/{id}/edit/', 'RespondenController@edit');
 Route::match(['get', 'post'], '/edit{id}', 'KelolaController@edit');
+
+
+
+// STORE TEING FUNGSINA NAON :()
+Route::post('/pertanyaan', 'KelolaController@store');

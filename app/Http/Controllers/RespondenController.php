@@ -85,9 +85,9 @@ class RespondenController extends Controller
 
         ]);
         if(empty($request->res_id))
-            $msg = 'Customer entry created successfully.';
+            $msg = 'Responden entry created successfully.';
         else
-            $msg = 'Customer data is updated successfully';
+            $msg = 'Responden data is updated successfully';
         return redirect()->route('dataResponden.index')->with('success',$msg);
     }
 
@@ -111,21 +111,39 @@ class RespondenController extends Controller
         // return redirect('/isiKuesioner');
 
 
-    function show(responden $responden)
+    public function show(responden $responden)
     {
         return $responden::all();
     }
 
-    function destroy($id)
+    public function destroy($id)
     {
        DB::table('respondens')->where('id',$id)->delete();
         return redirect('/dataResponden');
     }
 
-     function edit($id){
-        $where = array('id' => $id);
-        $responden = Respondens::where($where)->first();
-        return Response::json($responden);
+    public function edit(Request $request, $id = null){
+        // $where = array('id' => $id);
+        // $responden = Respondens::where($where)->first();
+        // return Response::json($responden);
+
+        if($request->isMethod('post')) {
+            $dataRes = $request->all();
+            Pertanyaan::where(['id'=>$id])
+            ->update(
+                ['id'=>$dataRes['id'], 
+                'id_responden'=>$dataRes['id_responden'], 
+                'identitas_instansi_perusahaan'=>$dataRes['identitas_instansi_perusahaan'], 
+                'alamat'=>$dataRes['alamat'],
+                'no_telpon'=>$dataRes['no_telpon'],
+                'pengisi_lembar_evaluasi'=>$dataRes['pengisi_lembar_evaluasi'],
+                'jabatan'=>$dataRes['jabatan'],
+                'tgl_pengisian'=>$dataRes['tgl_pengisian'],
+                'deskripsi'=>$dataRes['deskripsi']
+
+            ]);
+            return redirect()->back();
+        }
     }
 
 }
