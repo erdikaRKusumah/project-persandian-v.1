@@ -8,13 +8,13 @@
 <div class="container">
  <div class="row">
   <div class="col-6">
-  <form action="/responden" method="POST">
+  <form action="/simpan_data_responden" method="POST">
   @csrf  
 
   
     <div class="form-group">
     <label for="identitas_instansi_perusahaan">Identitas Instansi atau Perusahaan :</label>
-      <select id="inputState" class="form-control @error('identitas_instansi_perusahaan') is-invalid @enderror" name="identitas_instansi_perusahaan">
+      <select id="identitas_instansi_perusahaan"  class="form-control @error('identitas_instansi_perusahaan') is-invalid @enderror" name="identitas_instansi_perusahaan">
         <option selected>Satuan Kerja</option>
         <option>Direktorat</option>
         <option>Departemen</option>
@@ -83,5 +83,17 @@
   </div>
  </div>
 </div>
-
+<script type="text/javascript">
+            function isi_otomatis(){
+      var instansi = $("#identitas_instansi_perusahaan").val();
+      $.ajax({
+          url: 'js/ajax.php',
+          data:"instansi="+instansi ,
+      }).success(function (data) {
+          var json = data,
+          obj = JSON.parse(json);
+          $('#no_telpon').val(obj.no_telpon);
+      });
+  }
+        </script>
 @endsection

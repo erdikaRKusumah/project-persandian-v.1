@@ -27,21 +27,29 @@
                         </tr>
                     </thead>
                     <tbody>
-                    
-                   @foreach($kategori->pertanyaans as $key=>$pertanyaan)
+                    <form action="/survey/completed" method="POST">
+                    @csrf 
+                    @foreach($kategori->pertanyaans as $key=>$pertanyaan)
                         <tr>
                         <th scope="row">1.{{$loop->iteration}}</th>
                         <td colspan="3">{{ $pertanyaan->pertanyaan}}
-                        <div> <input type='radio' name='pilihanA' value='A'> {{$pertanyaan->pilihan['0']}}  </div>
-                        <div> <input type='radio' name='pilihanB' value='B'> {{$pertanyaan->pilihan['1']}}  </div>
-                        <div> <input type='radio' name='pilihanC' value='C'> {{$pertanyaan->pilihan['2']}}  </div>
+                        <div> <input type='radio' name='[pilihan]' value='A'>
+                        <label for="pilihanA">{{$pertanyaan->pilihan['0']}}</label>   </div>
+                        <div> <input type='radio' name='[pilihan]' value='B'>
+                        <label for="pilihanB">{{$pertanyaan->pilihan['1']}}</label>   </div>
+                        <div> <input type='radio' name='[pilihan]' value='C'>
+                        <label for="pilihanC">{{$pertanyaan->pilihan['2']}}</label>   </div>
                         </td>
                         </tr>
                     @endforeach
+                    
                         </td>
                         </tr>
                     </tbody>
+                    
                     </table>
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                    </form>
 
                     <nav aria-label="...">
                     <ul class="pagination">

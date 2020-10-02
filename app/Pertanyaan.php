@@ -10,7 +10,7 @@ class Pertanyaan extends Model
         'pilihan' => 'array',
     ];
 
-    protected $fillable = ['id_kategori', 'pertanyaan', 'pilihan'];
+    protected $fillable = ['kategori_id', 'pertanyaan', 'pilihan'];
     protected $table = 'pertanyaans';
 
     public function jawabans() {

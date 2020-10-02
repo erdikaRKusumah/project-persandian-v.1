@@ -32,6 +32,59 @@ class RespondenController extends Controller
         // return view('responden.isiKuesioner');
     }
 
+    public function simpan_data_responden(Request $request)
+    {
+        $request->validate([
+            'identitas_instansi_perusahaan' => 'required',
+            'alamat' => 'required',
+            'no_telpon' => 'required',
+            'email' => 'required',
+            'pengisi_lembar_evaluasi' => 'required',
+            'jabatan' => 'required',
+            'tgl_pengisian' => 'required',
+            'deskripsi' => 'required',
+        ]);
+
+        $id = 1;
+        Responden::create($request->all());
+        return redirect(('isiKuesioner'.$id));
+    }
+
+//     public function simpan_jawaban(Request $request, Kategori $kategori, Jawaban $jawaban) 
+//   {
+//     // remove the token
+//     $arr = $request->except('_token');
+//     foreach ($arr as $key => $value) {
+//     //   $newAnswer = new Jawaban();
+//       if (! is_array( $value )) {
+//         $newValue = $value['pilihan'];
+//       } else {
+//         $newValue = json_encode($value['pilihan']);
+//       }
+      
+//       DB::table('jawabans')->insertOrIgnore(
+//         ['id_pertanyaan' => 1,
+//          'id_responden' => 1,
+//          'jawaban' => 1,
+//          'skor' => 1,
+//          ]
+//         );
+      
+
+//     //   $newAnswer->jawaban = $newValue;
+//     //   $newAnswer->id_pertanyaan = $key;
+//     //   $newAnswer->id_responden = 1;
+
+//     //   $newAnswer->save();
+
+//     //   $answerArray[] = $newAnswer;
+//     };
+    
+
+    
+//     return redirect('/isiData');
+//   }
+
     
     
     // public function index()

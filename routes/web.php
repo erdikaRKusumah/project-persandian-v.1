@@ -63,8 +63,8 @@ Route::get('/dataRespondenDetail', 'RespondenController@show');
 
 // Index ADMIN / CONTROLLER
 Route::get('/halamanAdmin', 'AdminController@index');
-Route::get('/isiKuesioner', 'RespondenController@index');
-Route::get('/isiKuesioner/{kategori}', 'RespondenController@index');
+// Route::get('/isiKuesioner', 'RespondenController@index');
+Route::get('/isiKuesioner{kategori}', 'RespondenController@index')->name('isianaja');
 Route::get('/kelolaPertanyaan', 'KelolaController@index');
 
 
@@ -81,3 +81,5 @@ Route::match(['get', 'post'], '/edit{id}', 'KelolaController@edit');
 
 // STORE TEING FUNGSINA NAON :()
 Route::post('/pertanyaan', 'KelolaController@store');
+// Route::post('/survey/completed', 'RespondenController@simpan_jawaban');
+Route::post('/simpan_data_responden', 'RespondenController@simpan_data_responden');
