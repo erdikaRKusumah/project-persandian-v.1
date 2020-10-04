@@ -1,10 +1,14 @@
 @extends('layouts.admin')
 @section('content')
+
 @can('result_create')
     <div style="margin-bottom: 10px;" class="row">
         <div class="col-lg-12">
             <a class="btn btn-success" href="{{ route("admin.results.create") }}">
                 {{ trans('global.add') }} {{ trans('cruds.result.title_singular') }}
+            </a>
+            <a class="btn btn-success" href="{{ route("admin.results.create") }}">
+                tomol nyoba
             </a>
         </div>
     </div>
