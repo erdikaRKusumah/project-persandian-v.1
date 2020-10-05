@@ -40,6 +40,6 @@ class HomeController extends Controller
         ]);
 
         Responden::create($request->all());
-        return redirect(('home'));
+        return redirect(('test'));
     }
 }
