@@ -17,7 +17,10 @@ Route::group(['as' => 'client.', 'middleware' => ['auth']], function () {
     Route::post('test', 'TestsController@store')->name('test.store');
     Route::get('results/{result_id}', 'ResultsController@show')->name('results.show');
     Route::get('send/{result_id}', 'ResultsController@send')->name('results.send');
+
 });
+
+Route::post('/simpan_data_responden', 'HomeController@simpan_data_responden');
 
 Auth::routes();
 // Admin
