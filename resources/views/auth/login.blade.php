@@ -60,7 +60,7 @@
                         
                     </div>
                     <div class="input-group mb-3">
-                    <input id="captcha" name="captcha" type="text" class="form-control{{ $errors->has('captcha') ? ' is-invalid' : '' }}" placeholder="Masukkan Kode Captcha">
+                    <input id="captcha" name="captcha" type="text" class="form-control{{ $errors->has('captcha') ? ' is-invalid' : '' }}" required placeholder="Masukkan Kode Captcha">
                         @if($errors->has('captcha'))
                             <div class="invalid-feedback">
                                 {{ $errors->first('captcha') }}

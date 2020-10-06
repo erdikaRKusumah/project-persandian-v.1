@@ -21,8 +21,8 @@
                         @csrf
                         
                         <div class="form-group">
-                            <label for="identitas_instansi_perusahaan">Identitas Instansi atau Perusahaan :</label>
-                            <select id="identitas_instansi_perusahaan"  class="form-control @error('identitas_instansi_perusahaan') is-invalid @enderror" name="identitas_instansi_perusahaan">
+                            <label for="identitas_instansi_perusahaan">Identitas Instansi:</label>
+                            <select id="identitas_instansi_perusahaan" onchange="myFunction(this.value)" class="form-control @error('identitas_instansi_perusahaan') is-invalid @enderror" name="identitas_instansi_perusahaan">
                                 <option selected>Satuan Kerja</option>
                                 <option>Direktorat</option>
                                 <option>Departemen</option>
@@ -54,7 +54,7 @@
                         </div>                      
                         <div class="form-group">
                             <label for="no_telpon">No Telpon</label>
-                            <input type="text" class="form-control" id="no_telpon" placeholder="(Kode Area) Nomor Telpon" name="no_telpon">
+                            <input type="text" class="form-control" id="no_telpon" placeholder="(Kode Area) Nomor Telpon" name="no_telpon" disabled>
                         </div>
 
                         <div class="form-group">
@@ -91,3 +91,29 @@
     </div>
 </div>
 @endsection
+@section('scripts')
+<script type="text/javascript"> 
+    function myFunction(val) {
+        var text;
+        if (val === 'Direktorat') {
+            $('#no_telpon').val('0821234567');      
+        } else if(val === 'Satuan Kerja'){
+            $('#no_telpon').val('12345678');
+        }else{
+            $('#no_telpon').val('987654321');
+        }
+        
+}
+    
+
+</script>
+@endsection
+<!-- var identitas_instansi_perusahaan = $("#identitas_instansi_perusahaan").val();
+        $.ajax({
+            
+            url: 'get-no',
+            data: 'identitas_instansi_perusahaan='+identitas_instansi_perusahaan,
+        }).success: function (data) {
+                $('#no_telpon').val(no_telpon);
+            }
+        ; -->
