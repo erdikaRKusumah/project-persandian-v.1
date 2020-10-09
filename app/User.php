@@ -58,11 +58,8 @@ class User extends Authenticatable
             }
         });
     }
-
-    public function userResults()
-    {
-        return $this->hasMany(Result::class, 'user_id', 'id');
-    }
+    
+    
 
     public function getEmailVerifiedAtAttribute($value)
     {

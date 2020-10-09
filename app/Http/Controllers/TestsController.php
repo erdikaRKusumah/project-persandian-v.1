@@ -5,6 +5,9 @@ namespace App\Http\Controllers;
 use App\Category;
 use App\Http\Requests\StoreTestRequest;
 use App\Option;
+use App\Responden;
+use Illuminate\Support\Facades\DB;
+
 
 class TestsController extends Controller
 {
@@ -29,7 +32,7 @@ class TestsController extends Controller
         $result = auth()->user()->userResults()->create([
             'total_points' => $options->sum('points')
         ]);
-
+        
         $questions = $options->mapWithKeys(function ($option) {
             return [$option->question_id => [
                         'option_id' => $option->id,
@@ -37,9 +40,14 @@ class TestsController extends Controller
                     ]
                 ];
             })->toArray();
-
+        
         $result->questions()->sync($questions);
+        // Responden::create($request->all());
+        // DB::table('results')->insert([
+        //     ['responden_id' => $request->responden_id],
+        // ]);
 
         return redirect()->route('client.results.show', $result->id);
+    
     }
 }

@@ -6,12 +6,17 @@ use Illuminate\Support\Facades\Schema;
 
 class AddRelationshipFieldsToResultsTable extends Migration
 {
+    /**
+     * Run the migrations.
+     *
+     * @return void
+     */
     public function up()
     {
         Schema::table('results', function (Blueprint $table) {
-            $table->unsignedInteger('user_id');
+            $table->unsignedInteger('responden_id');
 
-            $table->foreign('user_id', 'user_fk_773765')->references('id')->on('users');
+            $table->foreign('responden_id', 'user_fk_773765')->references('id')->on('respondens');
         });
     }
 }

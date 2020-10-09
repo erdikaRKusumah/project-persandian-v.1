@@ -18,7 +18,7 @@ class Result extends Model
     ];
 
     protected $fillable = [
-        'user_id',
+        'responden_id',
         'created_at',
         'updated_at',
         'deleted_at',
@@ -27,7 +27,7 @@ class Result extends Model
 
     public function user()
     {
-        return $this->belongsTo(User::class, 'user_id');
+        return $this->belongsTo(Responden::class, 'responden_id');
     }
 
     public function questions()

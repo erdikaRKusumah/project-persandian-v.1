@@ -54,7 +54,7 @@
                         </div>                      
                         <div class="form-group">
                             <label for="no_telpon">No Telpon</label>
-                            <input type="text" class="form-control" id="no_telpon" placeholder="(Kode Area) Nomor Telpon" name="no_telpon" disabled>
+                            <input type="text" class="form-control" id="no_telpon" placeholder="(Kode Area) Nomor Telpon" name="no_telpon" readonly>
                         </div>
 
                         <div class="form-group">
@@ -105,15 +105,5 @@
         
 }
     
-
 </script>
 @endsection
-<!-- var identitas_instansi_perusahaan = $("#identitas_instansi_perusahaan").val();
-        $.ajax({
-            
-            url: 'get-no',
-            data: 'identitas_instansi_perusahaan='+identitas_instansi_perusahaan,
-        }).success: function (data) {
-                $('#no_telpon').val(no_telpon);
-            }
-        ; -->

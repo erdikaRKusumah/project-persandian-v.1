@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class Responden extends Model
 {
     public $table = 'respondens';
-    
+    public $incrementing = true;
     protected $dates = [
         'created_at',
         'updated_at',
@@ -24,4 +24,10 @@ class Responden extends Model
         'tgl_pengisian', 
         'deskripsi',
     ];
+    
+    public function userResults()
+    {
+        return $this->hasMany(Result::class, 'responden_id', 'id');
+    }
+    
 }

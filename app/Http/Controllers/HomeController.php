@@ -38,7 +38,7 @@ class HomeController extends Controller
             'tgl_pengisian' => 'required',
             'deskripsi' => 'required',
         ]);
-
+        
         Responden::create($request->all());
         return redirect(('test'));
     }

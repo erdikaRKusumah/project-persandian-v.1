@@ -53,7 +53,7 @@
                                 {{ $result->id ?? '' }}
                             </td>
                             <td>
-                                {{ $result->user->name ?? '' }}
+                                {{ $result->user->identitas_instansi_perusahaan ?? '' }}
                             </td>
                             <td>
                                 {{ $result->total_points ?? '' }}

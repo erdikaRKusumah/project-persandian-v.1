@@ -28,7 +28,7 @@
                             {{ trans('cruds.result.fields.user') }}
                         </th>
                         <td>
-                            {{ $result->user->name ?? '' }}
+                            {{ $result->user->identitas_instansi_perusahaan ?? '' }}
                         </td>
                     </tr>
                     <tr>
