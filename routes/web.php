@@ -54,5 +54,5 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.', 'namespace' => 'Admin', 'mi
     // Results
     Route::delete('results/destroy', 'ResultsController@massDestroy')->name('results.massDestroy');
     Route::resource('results', 'ResultsController');
-    Route::get('chart', 'ResultsController@index');
+    Route::get('chart', 'ResultsController@indexChart');
 });

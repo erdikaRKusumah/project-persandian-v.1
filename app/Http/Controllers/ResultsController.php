@@ -33,13 +33,16 @@ class ResultsController extends Controller
         return redirect()->route('client.results.show', $result->id)->withStatus('Your test result has been sent successfully!');
     }
 
-    public function index()
+    public function indexChart($data)
     {
-        $users = User::select(\DB::raw("COUNT(*) as count"))
-                    ->whereYear('created_at', date('Y'))
-                    ->groupBy(\DB::raw("Month(created_at)"))
-                    ->pluck('count');
+        $data = DB::laravel('question_result')
+                ->orderBy('result_id', 'points')
+                ->get();
+        // $users = User::select(\DB::raw("COUNT(*) as count"))
+        //             ->whereYear('created_at', date('Y'))
+        //             ->groupBy(\DB::raw("Month(created_at)"))
+        //             ->pluck('count');
           
-        return view('chart', compact('user'));
+        return view('chart');
     }
 }

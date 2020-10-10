@@ -91,7 +91,7 @@
                 </tbody>
             </table>
         </div>
-        <canvas id="myChart"></canvas>
+        <canvas id="chart"></canvas>
     </div>
 </div>
 
@@ -104,18 +104,18 @@
 <!-- canvas script -->
 <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
 <script>
-var ctx = document.getElementById('myChart').getContext('2d');
+var ctx = document.getElementById('chart').getContext('2d');
 
 
-var myChart = new Chart(ctx, {
+var chart = new Chart(ctx, {
     type: 'radar',
 
     data: {
         labels: ['Tata Kelola', 'Pengelolaan Risiko', 'Kerangka Kerja', 
         'Pengelolaan Aset', 'Aspek Teknologi'],
         datasets: [{
-            label: '# of Votes',
-            data: [12, 19, 3, 5, 2, 3],
+            label: ' of Votes',
+            data: $data,
             backgroundColor: [
                 'rgba(255, 99, 132, 0.2)',
                 'rgba(54, 162, 235, 0.2)',
@@ -135,7 +135,8 @@ var myChart = new Chart(ctx, {
             borderWidth: 0
         }]
     },
-    options: {
+    options: 
+    {
         scales: {
             yAxes: [{
                 ticks: {
