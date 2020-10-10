@@ -5,6 +5,12 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
+            <?php if(Session::has('register_success')): ?>
+                        <div class="message message-success">
+                            <span class="close"></span>
+                            <?php echo Session::get('register_success') ?>
+                        </div>
+            <?php endif; ?>
                 <div class="card-header">Data Responden</div>
 
                 <div class="card-body">

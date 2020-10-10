@@ -29,7 +29,10 @@ class TestsController extends Controller
     {
         $options = Option::find(array_values($request->input('questions')));
 
-        $result = auth()->user()->userResults()->create([
+        // $result = auth()->user()->userResults()->create([
+        //     'total_points' => $options->sum('points')
+        // ]);
+        $result = (new \App\Responden)->userResults()->create([
             'total_points' => $options->sum('points')
         ]);
         

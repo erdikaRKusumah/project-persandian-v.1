@@ -40,7 +40,7 @@ class HomeController extends Controller
         ]);
         
         Responden::create($request->all());
-        return redirect(('test'));
+        return redirect(('test'))->with('message', 'Data Berhasil disimpan ! Silahkan isi Kuesioner di Bawah Ini.');
     }
 
 }
