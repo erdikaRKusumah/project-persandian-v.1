@@ -115,7 +115,7 @@ var chart = new Chart(ctx, {
         'Pengelolaan Aset', 'Aspek Teknologi'],
         datasets: [{
             label: ' of Votes',
-            data: $data,
+            data: ['12','14','2','4'],
             backgroundColor: [
                 'rgba(255, 99, 132, 0.2)',
                 'rgba(54, 162, 235, 0.2)',
