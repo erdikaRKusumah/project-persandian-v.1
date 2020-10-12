@@ -23,7 +23,7 @@
                             </div>
                         </div>
                     @endif --}}
-                    <form action="/simpan_data_responden" method="POST">
+                    <form action="/dashboard" method="POST">
                         @csrf
                         
                         <div class="form-group">
@@ -88,8 +88,7 @@
                             <textarea class="form-control" id="deskripsi" rows="3" placeholder="Isi dengan deskripsi ruang lingkup struktur organisasi (Departemen, Bagian atau Satuan Kerja) dan infrastruktur TIK
                         " name="deskripsi"></textarea>
                         </div>
-                        
-                        <button type="submit" class="btn btn-primary">Submit</button>
+                            <button type="submit" class="btn btn-primary">Submit</button>
                     </form> 
                 </div>
             </div>

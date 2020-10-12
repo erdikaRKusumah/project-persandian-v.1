@@ -40,6 +40,11 @@ class HomeController extends Controller
         ]);
         
         Responden::create($request->all());
+
+        $id = Responden::orderBy('id', 'desc')->first();        
+        // return view('client.test', compact($id));
+        // return redirect('test', $id);
+
         return redirect(('test'))->with('message', 'Data Berhasil disimpan ! Silahkan isi Kuesioner di Bawah Ini.');
     }
 

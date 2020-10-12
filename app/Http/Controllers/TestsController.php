@@ -35,6 +35,10 @@ class TestsController extends Controller
         $result = (new \App\Responden)->userResults()->create([
             'total_points' => $options->sum('points')
         ]);
+
+        $request->validate([
+            'responden_id' => 'required',
+        ]);
         
         $questions = $options->mapWithKeys(function ($option) {
             return [$option->question_id => [
@@ -49,6 +53,7 @@ class TestsController extends Controller
         // DB::table('results')->insert([
         //     ['responden_id' => $request->responden_id],
         // ]);
+        Result::create($request->all());
 
         return redirect()->route('client.results.show', $result->id);
     
