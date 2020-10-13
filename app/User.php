@@ -87,4 +87,9 @@ class User extends Authenticatable
     {
         return $this->belongsToMany(Role::class);
     }
+
+    public function userResults()
+    {
+        return $this->hasMany(Result::class, 'responden_id', 'id');
+    }
 }

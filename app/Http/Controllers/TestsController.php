@@ -32,7 +32,7 @@ class TestsController extends Controller
         // $result = auth()->user()->userResults()->create([
         //     'total_points' => $options->sum('points')
         // ]);
-        $result = (new \App\Responden)->userResults()->create([
+        $result = auth()->user()->userResults()->create([
             'total_points' => $options->sum('points')
         ]);
 
@@ -53,9 +53,10 @@ class TestsController extends Controller
         // DB::table('results')->insert([
         //     ['responden_id' => $request->responden_id],
         // ]);
-        Result::create($request->all());
+        // Result::create($request->all());
 
         return redirect()->route('client.results.show', $result->id);
     
     }
+    
 }
