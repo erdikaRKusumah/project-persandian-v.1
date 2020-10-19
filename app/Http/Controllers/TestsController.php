@@ -29,6 +29,12 @@ class TestsController extends Controller
     {
         $options = Option::find(array_values($request->input('questions')));
 
+<<<<<<< HEAD
+=======
+        // $result = auth()->user()->userResults()->create([
+        //     'total_points' => $options->sum('points')
+        // ]);
+>>>>>>> 56f00ac42364a505db17890e20c8b21dff660bd3
         $result = auth()->user()->userResults()->create([
             'total_points' => $options->sum('points')
         ]);
@@ -42,8 +48,17 @@ class TestsController extends Controller
             })->toArray();
 
         $result->questions()->sync($questions);
+<<<<<<< HEAD
+=======
+        // Responden::create($request->all());
+        // DB::table('results')->insert([
+        //     ['responden_id' => $request->responden_id],
+        // ]);
+        // Result::create($request->all());
+>>>>>>> 56f00ac42364a505db17890e20c8b21dff660bd3
 
         return redirect()->route('client.results.show', $result->id);
     
     }
+    
 }
