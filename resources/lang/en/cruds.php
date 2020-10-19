@@ -125,7 +125,7 @@ return [
         'fields'         => [
             'id'                  => 'ID',
             'id_helper'           => '',
-            'user'                => 'User',
+            'user'                => 'Identitas Instansi Perusahaan',
             'user_helper'         => '',
             'total_points'        => 'Total Points',
             'total_points_helper' => '',

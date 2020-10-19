@@ -45,6 +45,10 @@ class StoreRespondenRequest extends FormRequest
                 'required',
                 'string',
             ],
+            'user_id'      => [
+                'required',
+                'integer',
+            ],
         ];
     }
 }

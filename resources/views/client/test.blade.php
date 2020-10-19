@@ -28,10 +28,6 @@
 
                     <form method="POST" action="{{ route('client.test.store') }}">
                         @csrf
-                        <div class="form-group">
-                            <label for="responden_id">Id</label>
-                            <input type="text" class="form-control" id="responden_id" name="responden_id">
-                        </div>
                         @foreach($categories as $category)
                             <div class="card mb-3">
                                 <div class="card-header">{{ $category->name }}</div>

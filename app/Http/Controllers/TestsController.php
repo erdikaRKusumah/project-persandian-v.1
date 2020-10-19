@@ -29,17 +29,10 @@ class TestsController extends Controller
     {
         $options = Option::find(array_values($request->input('questions')));
 
-        // $result = auth()->user()->userResults()->create([
-        //     'total_points' => $options->sum('points')
-        // ]);
-        $result = (new \App\Responden)->userResults()->create([
+        $result = auth()->user()->userResults()->create([
             'total_points' => $options->sum('points')
         ]);
 
-        $request->validate([
-            'responden_id' => 'required',
-        ]);
-        
         $questions = $options->mapWithKeys(function ($option) {
             return [$option->question_id => [
                         'option_id' => $option->id,
@@ -47,13 +40,8 @@ class TestsController extends Controller
                     ]
                 ];
             })->toArray();
-        
+
         $result->questions()->sync($questions);
-        // Responden::create($request->all());
-        // DB::table('results')->insert([
-        //     ['responden_id' => $request->responden_id],
-        // ]);
-        Result::create($request->all());
 
         return redirect()->route('client.results.show', $result->id);
     

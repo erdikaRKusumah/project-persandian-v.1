@@ -23,11 +23,14 @@ class Responden extends Model
         'jabatan', 
         'tgl_pengisian', 
         'deskripsi',
+        'user_id',
     ];
     
-    public function userResults()
+    
+
+    public function user()
     {
-        return $this->hasMany(Result::class, 'responden_id', 'id');
+        return $this->belongsTo(User::class, 'user_id', 'id');
     }
     
 }
