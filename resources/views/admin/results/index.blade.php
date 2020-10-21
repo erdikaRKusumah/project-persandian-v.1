@@ -60,7 +60,7 @@
                             </td>
                             <td>
                                 @foreach($result->questions as $key => $item)
-                                    <span class="badge badge-info">{{ $item->question_text }}</span>
+                                    <span class="badge badge-info">{{ $item->category->name }}</span>
                                 @endforeach
                             </td>
                             <td>

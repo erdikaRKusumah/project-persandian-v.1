@@ -44,9 +44,7 @@
                             {{ trans('cruds.result.fields.questions') }}
                         </th>
                         <td>
-                            @foreach($result->questions as $key => $questions)
-                                <span class="label label-info">{{ $questions->question_text }}</span>
-                            @endforeach
+                            <canvas id="chart"></canvas>
                         </td>
                     </tr>
                 </tbody>
@@ -57,7 +55,6 @@
                 </a>
             </div>
         </div>
-        <canvas id="chart"></canvas>
     </div>
 </div>
 
@@ -77,7 +74,7 @@ var chart = new Chart(ctx, {
         'Pengelolaan Aset', 'Aspek Teknologi'],
         datasets: [{
             label: ' of Votes',
-            data: ['12','14','2','4'],
+            data: ['10','10','10','10','10'],
             backgroundColor: [
                 'rgba(255, 99, 132, 0.2)',
                 'rgba(54, 162, 235, 0.2)',
