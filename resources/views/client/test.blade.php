@@ -245,6 +245,7 @@ function showTab(n) {
    
     
   } else {
+    document.getElementById("nextBtn").style.display = "inline";
     document.getElementById("nextBtn").innerHTML = "Next";
     document.getElementById("BtnSubmit").style.display = "none";
   }
