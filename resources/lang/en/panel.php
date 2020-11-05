@@ -1,5 +1,8 @@
 <?php
 
 return [
-    'site_title' => 'Test',
+    'admin' => 'Halaman Admin',
+    'client' => 'Halaman Responden',
+    'site_title' => 'Indeks KAMI',
+    
 ];

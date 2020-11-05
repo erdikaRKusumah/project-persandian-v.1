@@ -15,7 +15,7 @@
                         </div>
                     @endif
 
-                    You are logged in!
+                    Selamat datang, Admin.
                 </div>
             </div>
         </div>
