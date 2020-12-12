@@ -63,9 +63,12 @@
 <!-- canvas script -->
 <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
 <script>
+
+
+var url = "{{url('results/chart')}}";
+
+
 var ctx = document.getElementById('chart').getContext('2d');
-
-
 var chart = new Chart(ctx, {
     type: 'radar',
 

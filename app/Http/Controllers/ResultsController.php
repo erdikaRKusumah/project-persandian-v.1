@@ -38,10 +38,6 @@ class ResultsController extends Controller
         $data = DB::laravel('question_result')
                 ->orderBy('result_id', 'points')
                 ->get();
-        // $users = User::select(\DB::raw("COUNT(*) as count"))
-        //             ->whereYear('created_at', date('Y'))
-        //             ->groupBy(\DB::raw("Month(created_at)"))
-        //             ->pluck('count');
           
         return view('chart');
     }
