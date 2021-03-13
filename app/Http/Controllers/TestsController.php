@@ -42,7 +42,7 @@ class TestsController extends Controller
                     ]
                 ];
             })->toArray();
-        dd($request);
+        
 
         $result->questions()->sync($questions);
 
