@@ -61,7 +61,7 @@ button:hover {
                     
                 @endif
 
-                <div class="card-header">Kuesioner</div>
+                <div class="card-header">Kuesionerrrrrrrrrrr</div>
 
                 <div class="card-body">
                     @if(session('status'))
